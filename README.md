@@ -21,9 +21,9 @@ We compared seven different models in this work.
 
 **SWAG:** Train a SWAG model by running ```models/SWAG/train_swag.py```. For more details, please refer to the original implementation [here](https://github.com/wjmaddox/swa_gaussian) from which this code has been adapted.
 
-**Learned Deferral one-stage:** Use the script ```models/softmax_ensemble_mcdropout_LD1/train.py``` with ```--type=defer``` and set the deferral cost ```--c``` accordingly. This will automatically employ the surrogtate loss function during training and adjust the number of output classes.
+**Learned Deferral one-stage:** Use the script ```models/softmax_ensemble_mcdropout_LD1/train.py``` with ```--type=defer``` and set the deferral cost ```--c``` accordingly. This will automatically employ the surrogtate loss function during training and adjust the number of output classes. We set the cost to \[0.0, 0.04, 0.09, 0.13, 0.18, 0.22, 0.27, 0.31, 0.36, 0.4\].
 
-**Learned Deferral two-stage:** To train a two-stage Learned Deferral model, first an Ensemble must be trained as its outputs serve as the input to the second stage. This second-stage input is computed by running ```models/ensemble_outputs.py```. The second stage can then be trained using the script ```models/train_liu_deferral.py```.
+**Learned Deferral two-stage:** To train a two-stage Learned Deferral model, first an Ensemble must be trained as its outputs serve as the input to the second stage. This second-stage input is computed by running ```models/ensemble_outputs.py```. The second stage can then be trained using the script ```models/train_liu_deferral.py```. We set the cost to \[0.4, 0.47, 0.55, 0.62, 0.69, 0.76, 0.84, 0.91, 0.99, 1.06\].
 
 To perform inference and save model outputs for the test set (both in-domain and out-of-domain), use the following scripts based on the model:
 - Softmax model, the Ensemble and the one-stage Learned Deferral model: Run ```models/softmax_ensemble_mcdropout_LD1/eval_models.py```
