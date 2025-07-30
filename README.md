@@ -6,7 +6,7 @@ This repository contains the code needed to recreate the results in the work tit
 The code is implemented in Python 3.12.8. All required packages can be found in ```environment.yml```.
 
 ## Data
-All experiments were conducted on data from the [AIROGS](https://ieeexplore.ieee.org/abstract/document/10253652) challenge. We preprocessed the dataset using the cropping function in [this](https://github.com/berenslab/fundus_image_toolbox) package. To split the dataset and save it to an H5 file run ```data/AIROGS_to_h5.py```. To create a blurry or noisy out-of-distribution dataset run ```data/create_ood_dataset.py```. The dataloaders for the in-distribution and out-of-distribution dataset can be found in ```data/AIROGS_dataloader.py``` and ```data/AIROGS_ood_dataloader.py``` respectively.
+All experiments were conducted on data from the [AIROGS](https://ieeexplore.ieee.org/abstract/document/10253652) challenge. We preprocessed the dataset using the cropping function in [this](https://github.com/berenslab/fundus_image_toolbox) package. To split the dataset and save it to an H5 file run ```data/AIROGS_to_h5.py```. To create a blurry or noisy out-of-distribution dataset run ```data/create_ood_dataset.py```. The dataloaders for the in-distribution and out-of-distribution dataset can be found in ```data/AIROGS_dataloader.py``` and ```data/AIROGS_ood_dataloader.py``` respectively. The classification performance results on the [Chákṣu](https://www.nature.com/articles/s41597-023-01943-4) data were computed on images captured by the Bosch device. For preprocessing and dataloader please refer to [this](https://github.com/annawundram/glaucoma-diagnosis-pipeline) repository.
 
 ## Models
 We compared seven different models in this work.
